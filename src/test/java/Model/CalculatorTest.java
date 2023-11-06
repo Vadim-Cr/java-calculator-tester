@@ -20,6 +20,12 @@ class CalculatorTest {
     }
 
     @org.junit.jupiter.api.Test
+    void testDivideByZero() {
+        assertThrows(IllegalArgumentException.class, () ->
+        calculator.divide(1, 0), "Deve sollevare un IllegalArgumentException per divisione per zero");
+    }
+
+    @org.junit.jupiter.api.Test
     void divide() {
         assertEquals( 21.0, calculator.divide(42, 2));
     }
